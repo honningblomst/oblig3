@@ -24,7 +24,7 @@ def test_if_leapyear_is_dividable_by_400(leap_year):
     assert check_year.isLeapYear() == False
 
     check_year = leap_year(1337)
-    assert check_year.isLeapYear() == True
+    assert check_year.isLeapYear() == False
 
 
 def test_if_leapyear_is_not_dividable_by_100(leap_year):
