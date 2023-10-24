@@ -1,0 +1,28 @@
+name: run-tests-like-there-is-no-tomorrow
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  tests:
+    name: Run tests
+    runs-on: macos-latest
+    steps:
+      - name: Checkout and setup
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run:  pytest -r w
